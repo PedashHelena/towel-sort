@@ -3,7 +3,14 @@
 module.exports = function towelSort(matrix) {
     let newArray = [];
     if (matrix !== undefined && matrix.length !== 0) {
-        return newArray = (index % 2) ? newArray.push(...(element.reverse())) : newArray.push(...element);;
+        matrix.forEach((element, index) => {
+            if (index % 2) {
+                newArray.push(...(element.reverse()));
+            } else {
+                newArray.push(...element);
+            }
+        });
+        return newArray;
     } else {
         return []
     }
